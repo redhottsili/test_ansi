@@ -6,7 +6,7 @@
 
   tasks:
     - name: Run a Podman container
-      podman_container:
+      containers.podman.podman_container:
         name: "container{{ item }}"
         image: ubuntu
         state: started
