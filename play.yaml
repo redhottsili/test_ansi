@@ -1,0 +1,14 @@
+---
+- name: Run a Podman container
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Run a Podman container
+      podman_container:
+        name: "container{{ item }}"
+        image: ubuntu
+        state: started
+        command: sleep 3600
+      with_sequence: count=4
